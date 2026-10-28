@@ -1,19 +1,19 @@
-# Software Engineering Fundamentals: exercises
+# Software Engineering Fundamentals: activities
 
 Katas and activities for the CAS module Software Engineering Fundamentals, ETH Zurich, autumn
 semester 2026. New material appears here before each weekend.
 
-## Get the exercises (once)
+## Get the activities (once)
 
 1. Open VS Code. On the Welcome page, click **Clone Git Repository** (if the Welcome page is
    closed, open it with **Help > Welcome**).
 2. Paste this address and press Enter:
 
-       https://github.com/sef-hs26/exercises
+       https://github.com/sef-hs26/activities
 
 3. Choose a folder on your laptop, then click **Open** when VS Code asks.
 
-To open the exercises again later: **File > Open Folder**, then pick the `exercises` folder.
+To open the activities again later: **File > Open Folder**, then pick the `activities` folder.
 
 No GitHub account is needed. Without Git, click the green **Code** button on this page and choose
 **Download ZIP**.
@@ -21,7 +21,7 @@ No GitHub account is needed. Without Git, click the green **Code** button on thi
 ## Update them (before each session)
 
 In VS Code, open the Source Control view, click its **...** menu and choose **Pull**. In a
-terminal, inside the `exercises` folder, the same is:
+terminal, inside the `activities` folder, the same is:
 
     git pull
 
