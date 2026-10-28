@@ -1,0 +1,12 @@
+from station import Bike, Station
+
+station = Station("Bahnhofplatz", 3)
+station.dock(Bike(7, "city bike"))
+station.dock(Bike(12, "cargo bike"))
+print(f"{station.name} has {station.docks} docks.")
+print(f"{len(station.get())} bikes are docked.")
+print("Looking up bike 12:", station.find_by_id(12))
+print("Is there a cargo bike?", station.contains("cargo bike"))
+bike = station.undock(12)
+print(f"A rider takes bike {bike.id}. Rides so far: {bike.rides}.")
+print("Is there a cargo bike now?", station.contains("cargo bike"))

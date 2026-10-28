@@ -34,7 +34,8 @@ terminal, inside the `activities` folder, the same is:
           template/           the code you start from: work here
           solution/           a finished version: open it once you are done
 
-Some katas come in an easy and a hard version, each with its own `template/` and `solution/`.
+Some katas come in an easy, a medium and a hard version, each with its own `template/` and
+`solution/`. Start with the easy one.
 
 ## How to work on a kata
 
