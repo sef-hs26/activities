@@ -1,0 +1,11 @@
+# Files that Python and the editors create while participants work
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+.DS_Store
+.idea/
+*.swp
