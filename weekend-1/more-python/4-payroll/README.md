@@ -22,7 +22,7 @@ of employee, the intern, is paid the salary plus 200 francs a month for travel.
 
 ## Hard: coding kata (about 25 minutes)
 
-Work in pairs in `hard/template/`, where the toy kata is solved. One change request at a time:
+Start from `hard/template/payroll.py`, the toy kata solved. One change request at a time:
 
 1. Counter clerks: a `Clerk(name, salary, rentals)` is paid the salary plus 20 francs for every car
    they rented out this month, and `total_pay` keeps working without any change.
