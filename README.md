@@ -25,27 +25,42 @@ terminal, inside the `activities` folder, the same is:
 
     git pull
 
+Your changes stay on your laptop. Commit and push only in your team's project repository on
+GitLab. If `git pull` ever refuses to run because of your changes, ask a TA.
+
 ## What is inside
 
     weekend-1/                one folder per weekend
       more-python/            one folder per session
-        1-example-kata/       one folder per kata or activity, numbered in the order we use them
+        1-bike-station/       one folder per kata or activity, numbered in the order we use them
           README.md           the guide: start here
           template/           the code you start from: work here
-          solution/           a finished version: open it once you are done
+          solution/           the same files, finished: open them once you are done
 
-Some katas come in an easy, a medium and a hard version, each with its own `template/` and
-`solution/`. Start with the easy one.
+Some katas come in levels, `easy/`, `medium/` and `hard/`, each with its own `template/` and
+`solution/`. Start with the easy one. An activity without code has its guide, `README.md`, and our
+answer, `solution.md`.
 
 ## How to work on a kata
 
-1. Read its `README.md`. In VS Code, right-click the file and choose **Open Preview**.
-2. Work in `template/`. The guide says how to run the code and its tests. To get a terminal in the
-   right folder, right-click the folder and choose **Open in Integrated Terminal**.
-3. Look at `solution/` once you think you are done. To compare your file with the solution, select
-   both in the Explorer (hold Ctrl, or Cmd on a Mac), right-click and choose **Compare Selected**.
+1. **Read the guide**, the kata's `README.md`, in your browser: open
+   https://github.com/sef-hs26/activities and click through the folders.
+2. **Open the folder you work in.** In VS Code: **File > Open Folder**, then the kata's `template`
+   folder (in a kata with levels, `easy/template` and so on). The top of the Explorer now reads
+   `TEMPLATE`.
+3. **Run the code and its tests.** Open a terminal with **Terminal > New Terminal** and type the
+   commands of the guide, for example:
 
-The guides write `python3`. If that does not work on your laptop, type `python` instead.
+       python3 demo.py
+       python3 -m unittest -v
 
-Your changes stay on your laptop. Commit and push only in your team's project repository on
-GitLab. If `git pull` ever refuses to run because of your changes, ask a TA.
+   The tests also run in the Testing view: the beaker on the left, then its play button. A green
+   test passed, a red one did not.
+4. **Change the code** as the guide asks, often where a `# TODO` comment is. Run the tests again.
+5. **Compare with the solution** once you are done. `solution/` has the same files: open one with
+   **File > Open File** (on a Mac, **File > Open...**).
+
+If `python3` does not work on your laptop, type `python` instead.
+
+If the Testing view offers **Configure Python Tests**, leave that button alone. Check that the top
+of the Explorer reads `TEMPLATE`, or run the tests in the terminal.
