@@ -39,7 +39,8 @@ GitLab. If `git pull` ever refuses to run because of your changes, ask a TA.
 
 Some katas come in levels, `easy/`, `medium/` and `hard/`, each with its own `template/` and
 `solution/`. Start with the easy one. An activity without code has its guide, `README.md`, and our
-answer, `solution.md`.
+answer, `solution.md`. An animation has its guide, `README.md`, and a page, `index.html`, that
+opens in your browser.
 
 ## How to work on a kata
 

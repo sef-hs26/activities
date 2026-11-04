@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Git together</title>
+<meta name="description" content="Carlos and Marcel build a shop program together through GitLab: clone, commit, push, pull, a rejected push, a merge and a conflict, told as a story by a narrator. SEF HS26, ETH Zurich.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="viewport">
+  <div id="stage">
+
+    <header id="topbar">
+      <div class="brand">Git together</div>
+      <nav id="chapters" aria-label="Chapters"></nav>
+      <div class="top-right">
+        <div class="mode" role="group" aria-label="Mode">
+          <button id="mode-story" class="on" type="button">Story</button>
+          <button id="mode-free" type="button">Free play</button>
+        </div>
+        <button id="theme-btn" class="icon-btn" type="button" title="Light or dark (t)" aria-label="Switch light or dark">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5 A8.5 8.5 0 0 1 12 20.5 Z" fill="currentColor" stroke="none"/></svg>
+        </button>
+        <button id="help-btn" class="icon-btn" type="button" title="Keys (?)" aria-label="Show the keys">
+          <svg viewBox="0 0 24 24"><path d="M9.2 9.3a2.9 2.9 0 1 1 4.3 2.5c-.9.5-1.5 1.1-1.5 2.1v.6"/><circle cx="12" cy="17.6" r=".6"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- the narrator: always on the left, tells the story step by step -->
+    <aside id="pane" aria-label="Narrator">
+      <div class="face" id="face" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <path class="hair" d="M22 56 C20 26 42 14 60 14 C78 14 100 26 98 56"/>
+          <circle class="head" cx="60" cy="64" r="38"/>
+          <path class="hair" d="M30 40 C42 30 50 34 60 30 C70 34 80 30 90 40"/>
+          <circle class="glass" cx="45" cy="61" r="10.5"/>
+          <circle class="glass" cx="75" cy="61" r="10.5"/>
+          <path class="glass" d="M55.5 61 H64.5"/>
+          <circle class="eye" cx="45" cy="62" r="2.8"/>
+          <circle class="eye" cx="75" cy="62" r="2.8"/>
+          <path class="mouth shut" d="M47 82 Q60 92 73 82"/>
+          <ellipse class="mouth open" cx="60" cy="85" rx="9" ry="6.5"/>
+        </svg>
+        <div class="face-name">the narrator</div>
+      </div>
+      <div id="say" class="say"><div id="caption" aria-live="polite"></div></div>
+      <div id="free-panel" class="free-panel"></div>
+      <div class="pane-foot">
+        <div class="nav">
+          <button id="prev" class="nav-btn" type="button" aria-label="Back">
+            <svg viewBox="0 0 30 30"><path d="M18 6 L9 15 L18 24"/></svg>
+          </button>
+          <div id="stepno"></div>
+          <button id="next" class="nav-btn" type="button" aria-label="Next">
+            <svg viewBox="0 0 30 30"><path d="M12 6 L21 15 L12 24"/></svg>
+          </button>
+        </div>
+        <div class="free-tools">
+          <button id="undo" type="button">Undo</button>
+          <button id="reset" type="button">Reset</button>
+          <button id="back-to-story" type="button">Story</button>
+        </div>
+      </div>
+    </aside>
+
+    <div id="help" class="help" role="dialog" aria-label="Keys">
+      <b>Story</b><br>
+      Next: <kbd>Right</kbd> <kbd>PageDown</kbd> <kbd>Space</kbd> or the clicker.
+      While code is being typed, the first press finishes it.<br>
+      Back: <kbd>Left</kbd> <kbd>PageUp</kbd><br>
+      First and last step: <kbd>Home</kbd> <kbd>End</kbd><br>
+      <b>Anywhere</b><br>
+      Light or dark: <kbd>t</kbd> &nbsp; Full screen: <kbd>f</kbd><br>
+      Free play starts from the step you are on; its buttons appear on the left.
+    </div>
+
+    <section id="place-gitlab" class="place remote" aria-label="GitLab">
+      <div class="place-head">
+        <svg class="server" viewBox="0 0 30 30" aria-hidden="true"><rect x="4" y="4" width="22" height="9" rx="2"/><rect x="4" y="17" width="22" height="9" rx="2"/><circle cx="9" cy="8.5" r="1.2"/><circle cx="9" cy="21.5" r="1.2"/></svg>
+        <span class="place-name">GitLab</span><span class="place-sub">the shared project</span>
+      </div>
+      <div class="files" id="files-gitlab"></div>
+    </section>
+
+    <section id="place-carlos" class="place local" aria-label="Carlos's laptop">
+      <div class="place-head"><span class="avatar carlos">C</span><span class="place-name">Carlos</span><span class="place-sub">laptop</span></div>
+      <div class="empty-note" id="empty-carlos">no project yet</div>
+      <div class="files" id="files-carlos"></div>
+      <div class="editor" id="ed-carlos"><div class="ed-head"></div><div class="code"></div></div>
+      <div class="terminal" id="term-carlos" aria-label="Carlos's terminal"></div>
+    </section>
+
+    <section id="place-marcel" class="place local" aria-label="Marcel's laptop">
+      <div class="place-head"><span class="avatar marcel">M</span><span class="place-name">Marcel</span><span class="place-sub">laptop</span></div>
+      <div class="empty-note" id="empty-marcel">no project yet</div>
+      <div class="files" id="files-marcel"></div>
+      <div class="editor" id="ed-marcel"><div class="ed-head"></div><div class="code"></div></div>
+      <div class="terminal" id="term-marcel" aria-label="Marcel's terminal"></div>
+    </section>
+
+    <svg id="overlay" viewBox="0 0 1600 900" aria-hidden="true"></svg>
+
+    <div id="summary" class="summary"></div>
+
+    <!-- opening pictures and cutscenes: the story behind each change -->
+    <div id="scene" class="scene" aria-hidden="true"><svg id="scene-svg" viewBox="0 0 1216 846"></svg></div>
+
+  </div>
+</div>
+<script src="js/theme.js"></script>
+<script src="js/model.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/story.js"></script>
+<script src="js/scenes.js"></script>
+<script src="js/view.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
