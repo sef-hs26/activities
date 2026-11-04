@@ -32,7 +32,12 @@ Start from `hard/template/payroll.py`, the toy kata solved. One change request a
 
 ## Run it
 
-Inside `easy/template`, `medium/template` or `hard/template`:
+In VS Code: **File > Open Folder**, then pick the folder you work in, for example
+`weekend-1/more-python/4-payroll/easy/template` inside your `activities` folder. Open this
+folder itself, so that the Testing view (the beaker on the left) finds the tests. If the Testing
+view offers **Configure Python Tests** instead, leave that button alone and look at the top of the
+Explorer: it names the open folder, which must be `TEMPLATE`. Then, in a terminal
+(**Terminal > New Terminal**):
 
     python3 demo.py
     python3 -m unittest -v

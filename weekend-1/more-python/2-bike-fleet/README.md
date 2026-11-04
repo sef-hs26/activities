@@ -37,7 +37,12 @@ the other:
 
 ## Run it
 
-In the folder you work in, for example `easy/template`:
+In VS Code: **File > Open Folder**, then pick the folder you work in, for example
+`weekend-1/more-python/2-bike-fleet/easy/template` inside your `activities` folder. Open this
+folder itself, so that the Testing view (the beaker on the left) finds the tests. If the Testing
+view offers **Configure Python Tests** instead, leave that button alone and look at the top of the
+Explorer: it names the open folder, which must be `TEMPLATE`. Then, in a terminal
+(**Terminal > New Terminal**):
 
     python3 demo.py
     python3 -m unittest -v

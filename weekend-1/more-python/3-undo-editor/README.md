@@ -33,7 +33,12 @@ Open `hard/template/editor.py`: it is the toy kata, solved. Then the team asks f
 
 ## Run it
 
-Inside a variant folder, for example `easy/template`:
+In VS Code: **File > Open Folder**, then pick the folder you work in, for example
+`weekend-1/more-python/3-undo-editor/easy/template` inside your `activities` folder. Open this
+folder itself, so that the Testing view (the beaker on the left) finds the tests. If the Testing
+view offers **Configure Python Tests** instead, leave that button alone and look at the top of the
+Explorer: it names the open folder, which must be `TEMPLATE`. Then, in a terminal
+(**Terminal > New Terminal**):
 
     python3 demo.py
     python3 -m unittest -v
