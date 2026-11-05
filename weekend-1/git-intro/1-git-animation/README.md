@@ -6,8 +6,10 @@ and one change conflicts with the other's.
 
 ## Open it
 
-In your `activities` folder, open `weekend-1/git-intro/1-git-animation` in Finder (Mac) or File
-Explorer (Windows) and double-click `index.html`. It opens in your browser and needs no internet.
+In your browser: https://sef-hs26.github.io/activities/weekend-1/git-intro/1-git-animation/
+
+Without internet: in your `activities` folder, open `weekend-1/git-intro/1-git-animation` in
+Finder (Mac) or File Explorer (Windows) and double-click `index.html`. It opens in your browser.
 
 From VS Code: in the Explorer, right-click `index.html` and choose **Reveal in Finder** (Mac) or
 **Reveal in File Explorer** (Windows), then double-click it there.
